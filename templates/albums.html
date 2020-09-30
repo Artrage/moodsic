@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mo00dsic</title>
+</head>
+<body>
+    {% for album in albums %}
+        {{ album.artist }}<br>
+        {{ album.title }}<br>
+        {{ album.mood }}<br>
+        {{ album.genre }}<br>
+        {{ album.year }}<br>
+        {{ album.is_fav }}<br>
+        {{ album.artwork }}<br>
+        {{ album.spotify }}<br>
+    {% endfor %}    
+</body>
+</html>
