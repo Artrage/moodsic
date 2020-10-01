@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mo00dsic</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Iam extening the base element</h2>
+
     {% for album in albums %}
         {{ album.artist }}<br>
         {{ album.title }}<br>
@@ -16,5 +13,5 @@
         {{ album.artwork }}<br>
         {{ album.spotify }}<br>
     {% endfor %}    
-</body>
-</html>
+
+{% endblock %}
