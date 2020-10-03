@@ -1,3 +1,12 @@
 body {
     background-color: rgb(233, 233, 233);
 }
+
+reg-form {
+    text-align: center;
+    background-color: grey;
+}
+
+center-align {
+    text-align: center;
+}
