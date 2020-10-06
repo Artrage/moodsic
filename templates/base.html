@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" type="text/css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <script src="https://unpkg.com/@popperjs/core@2"></script>    
+
     {% block styles %}
     {% endblock %}
     <title>moodsic</title>
@@ -26,7 +28,7 @@
                         <a class="nav-link" href="{{ url_for('get_albums') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Mood</a>
+                        <a class="nav-link" href="{{ url_for('moods') }}">Mood</a>
                     </li>
                     {% if session.user %}
                         <li class="nav-item">

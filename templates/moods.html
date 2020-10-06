@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row ">
+    <div class="div col-2"></div>
+        <div class="dropdown col-8 text-center">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                What mood are you in?
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Happy</a>
+                <a class="dropdown-item" href="#">Excited</a>
+                <a class="dropdown-item" href="#">Bad</a>
+                <a class="dropdown-item" href="#">Thoughtful</a>
+                <a class="dropdown-item" href="#">Hurt</a>
+                <a class="dropdown-item" href="#">Angry</a>
+            </div>
+    </div>
+    <div class="div col-2"></div>
+</div>
+
+    {% for mood in albums %}
+        {{ mood.Happy }}<br>
+        {{ mood.Excited }}<br>
+        {{ mood.Bad }}<br>
+        {{ mood.Thoughtful }}<br>
+        {{ mood.Hurt }}<br>
+        {{ mood.Angry }}<br>
+    {% endfor %}    
+
+{% endblock %}

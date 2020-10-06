@@ -25,6 +25,13 @@ def get_albums():
     return render_template("albums.html", albums=albums)
 
 
+@app.route("/")
+@app.route("/moods")
+def moods():
+    moods = mongo.db.moods.find()
+    return render_template("moods.html", moods=moods)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
