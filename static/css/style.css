@@ -14,3 +14,9 @@ center-align {
 fas1 {
     padding: 35px 5px;
 }
+
+btn-pad {    
+    padding: 5px;
+    background-color: black;
+    font-size: 40px;
+}

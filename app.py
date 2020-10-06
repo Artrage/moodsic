@@ -95,7 +95,7 @@ def profile(username):
 @app.route("/logout")
 def logout():
     # remove user from session cookies
-    flash("You have been logged out")
+    flash("Logged out. Ciao!")
     session.pop("user")
     return redirect(url_for("login"))
 

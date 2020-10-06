@@ -5,17 +5,17 @@
 <div class="row">
     <div class="col-lg-2"></div>
 	<form class="card reg-form col-lg-8 col-sm-12" method="POST" action="{{ url_for('login') }}">
-		<div class="card-header justify-content-center align-items-center center-align">
+		<div class="card-header justify-content-center align-items-center center-align text-center">
 			Login
 		</div>
-		<div class="card-body justify-content-center align-items-center">
+		<div class="card-body justify-content-center align-items-center text-center">
 			<h5 class="card-title">Enter your details</h5>
         
             <!-- user details -->
             <div class="form-group row">
                 <label for="username" class="col-sm-2 col-form-label" ><i class="fas fa-user-circle"></i>Username</label>
                 <div class="col-sm-10">
-                    <input type="username" class="form-control validate" id="username" name="username" minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" placeholder="5-25 alphanumeric characters"> 
+                    <input type="username" class="form-control validate" id="username" name="username" minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" placeholder="5-25 alphanumeric characters" required> 
                 </div>
             </div>
 
@@ -23,23 +23,23 @@
             <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label"><i class="fas fa-key"></i>Password</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control validate" id="password" name="password"  minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" placeholder="5-25 alphanumeric characters">
+                        <input type="password" class="form-control validate" id="password" name="password"  minlength="5" maxlength="25" pattern="^[a-zA-Z0-9]{5,25}$" placeholder="5-25 alphanumeric characters" required>
                     </div>
             </div>
 
             <!-- register button -->
-            <div class="div center-align">
-                Existing user?
-                <a href="{{ url_for('login') }}" >
-                <button type="submit" class="btn btn-primary center-align"><i class="fas fa-sign-in-alt"></i>Log In</button></a>
+            <div class="row">
+                <div class="div text-center col-6">
+                    Existing user?
+                    <a href="{{ url_for('login') }}" >
+                    <button type="submit" class="btn btn-primary center-align btn-pad"><i class="fas fa-sign-in-alt"></i>Log In</button></a>
+                </div>
+                <div class="div text-center col-6" padding="5px">
+                    New user?
+                    <a href="{{ url_for('register') }}" >
+                    <button type="submit" class="btn btn-primary center-align btn-pad"><i class="fas fa-user-plus"></i>Register</button></a>
+                </div>
             </div>
-
-            <div class="div center-align">
-                New user?
-                <a href="{{ url_for('register') }}" >
-                <button type="submit" class="btn btn-primary center-align"><i class="fas fa-user-plus"></i>Register</button></a>
-            </div>
-
 
 		</div>
 	</form>
