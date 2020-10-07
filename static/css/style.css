@@ -20,3 +20,8 @@ btn-pad {
     background-color: black;
     font-size: 40px;
 }
+
+card-style {
+    margin-top: 10px;
+    background-color: red;
+}
