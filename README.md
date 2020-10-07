@@ -6,7 +6,7 @@
 Find music albums on Spotify that match their current mood.
 
 **Site owner's goal:**
-Earn money on each book purchased via a link from the site.
+Earn money on each album purchased via a link from the site.
 
 **The features include:**
 1. Users select their current mood from a dropdown menu. The selection will open in a new page, and user will be able to select the album(s) from the displayed results.
