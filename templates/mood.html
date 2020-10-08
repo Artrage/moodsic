@@ -9,7 +9,7 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Happy</a>
+                <a class="dropdown-item" href="{{ url_for('happy') }}">Happy</a>
                 <a class="dropdown-item" href="#">Excited</a>
                 <a class="dropdown-item" href="#">Bad</a>
                 <a class="dropdown-item" href="#">Thoughtful</a>
@@ -19,6 +19,21 @@
     </div>
     <div class="div col-2"></div>
 </div>
+
+<div class="row">
+    <div class="div col-lg-2"></div>
+        <div class="div col-lg-8 text-center">
+            Album is here    
+        </div>
+    <div class="div col-lg-2"></div>
+</div>
+
+<!-- <script> 
+$(".dropdown-menu a ").click(function () {
+    let happy = $(this).text();
+    alert(happy);
+});
+</script>-->
 
     {% for mood in albums %}
         {{ mood.Happy }}<br>

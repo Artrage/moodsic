@@ -26,10 +26,10 @@ def get_albums():
 
 
 @app.route("/")
-@app.route("/moods")
-def moods():
-    moods = mongo.db.moods.find()
-    return render_template("moods.html", moods=moods)
+@app.route("/mood")
+def mood():
+    mood = mongo.db.albums.find()
+    return render_template("mood.html", mood=mood)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -105,6 +105,15 @@ def logout():
     flash("Logged out. Ciao!")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/")
+@app.route("/happy", methods=["GET"])
+def happy():
+    happy = mongo.db.albums.find(
+        {"mood": "happy"}
+    )
+    return render_template("mood.html", happy=happy)
 
 
 if __name__ == "__main__":
