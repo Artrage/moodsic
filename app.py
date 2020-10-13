@@ -107,13 +107,10 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/")
-@app.route("/happy", methods=["GET"])
+@app.route("/happy")
 def happy():
-    happy = mongo.db.albums.find(
-        {"mood": "happy"}
-    )
-    return render_template("mood.html", happy=happy)
+    happy = mongo.db.albums.find()
+    return render_template("happy.html", happy=happy)
 
 
 if __name__ == "__main__":

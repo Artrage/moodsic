@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="div row">
+    <div class="div col-2"></div>
+        <div class="div col-8"><h3 class="text-center">Here comes a bunch of happy albums for your mood!</h3></div>
+    <div class="div col-2"></div>
+</div>
+
+<div class="row">
+    <div class="div col-2"></div>
+        <div class="col-lg-8 text-center">albums are gonna be right here
+
+            {% for album in albums %}
+                {{ album.artist }}<br>
+                {{ album.title }}<br>
+                {{ album.mood }}<br>
+                {{ album.genre }}<br>
+                {{ album.year }}<br>
+                {{ album.is_fav }}<br>
+                {{ album.artwork }}<br>
+                {{ album.spotify }}<br>
+            {% endfor %}    
+        </div>
+    <div class="div col-2"></div>
+</div>
+{% endblock %}

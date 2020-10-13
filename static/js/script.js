@@ -3,10 +3,15 @@ $(document).ready(function () {
 });
 
 
-$(".dropdown-menu a ").click(function () {
-    let popup = $(this).text();
-    alert(popup);
-});
+// $(".dropdown-menu a ").click(function () {
+    // let popup = $(this).text();
+    // alert(popup);
+// });
+
+// $(document).ready(function () {
+    // $(".dropdown-menu a ").click(function () {
+                
+// });
 
 // $( document ).ready(function() {
     // $('.dropdown').each(function (key, dropdown) {
