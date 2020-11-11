@@ -1,40 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row ">
-    <div class="div col-2"></div>
-        <div class="dropdown col-8 text-center">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                What mood are you in?
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="{{ url_for('happy') }}">Happy</a>
-                <a class="dropdown-item" href="#">Excited</a>
-                <a class="dropdown-item" href="#">Bad</a>
-                <a class="dropdown-item" href="#">Thoughtful</a>
-                <a class="dropdown-item" href="#">Hurt</a>
-                <a class="dropdown-item" href="#">Angry</a>
-            </div>
-    </div>
-    <div class="div col-2"></div>
-</div>
-
-<div class="row">
-    <div class="div col-lg-2"></div>
-        <div class="div col-lg-8 text-center">
-            Album is here    
-        </div>
-    <div class="div col-lg-2"></div>
-</div>
-
-<!-- <script> 
-$(".dropdown-menu a ").click(function () {
-    let happy = $(this).text();
-    alert(happy);
-});
-</script>-->
-
     {% for mood in albums %}
         {{ mood.Happy }}<br>
         {{ mood.Excited }}<br>

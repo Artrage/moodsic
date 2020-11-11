@@ -2,6 +2,17 @@ $(document).ready(function () {
     $('.dropdown-toggle').dropdown();
 });
 
+//     $(".dropdown-menu a ").click(function () {
+//         let loadmood = $(this).text();
+//             if (loadmood ("Excited"))
+//                 return function(){ console.log("Excited albums"); }
+//             else if (loadmood ("Bad"))
+//                 return function(){ console.log("Bad mood albums"); }
+//             else
+//                 return function(){ console.log("Here's some random albums for you") }     
+// })();
+
+// $(this).text();
 
 // $(".dropdown-menu a ").click(function () {
     // let popup = $(this).text();
@@ -21,3 +32,14 @@ $(document).ready(function () {
         // });
     // });
 // });
+
+// function getMood(value) {
+//     if (value=="Happy") {
+//         document.getElementById('Happy');
+//         return(mood);
+//     } else if (mood=="Thoughtful") {
+//         document.getElementById('Thoughtful');
+//         return(mood);  
+//     }
+// }
+//     alert(mood);
