@@ -41,13 +41,6 @@ def get_happy():
     return render_template("happy.html", happy=happy)
  
 
-@app.route("/")
-@app.route("/get_image")
-def get_image():
-    image = mongo.db.albums.find({"artwork": "artwork"})
-    return render_template("albums.html", image=image)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":

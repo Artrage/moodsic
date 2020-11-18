@@ -8,9 +8,8 @@
         {{ album.genre }}<br>
         {{ album.year }}<br>
         {{ album.is_fav }}<br>
-        <img src ="{{ url_for('get_image', filename = 'artwork')}}"><br>
+        <img src ="{{ album.artwork }}" class="album-artwork"><br>
         {{ album.spotify }}<br>
-        {{ album.img }}<br>
     {% endfor %}    
 
 {% endblock %}

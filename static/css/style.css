@@ -25,3 +25,11 @@ card-style {
     margin-top: 10px;
     background-color: red;
 }
+
+album-artwork {
+    max-width: 300px;
+    height: auto;
+    text-align: center;
+    border: 15px;
+    opacity: 0.5;
+}

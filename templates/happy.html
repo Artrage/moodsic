@@ -23,9 +23,8 @@
                             {{ happy.genre }}<br>
                             {{ happy.year }}<br>
                             {{ happy.is_fav }}<br>
-                            {{ happy.artwork }}<br>
-                            {{ happy.spotify }}<br>
-                            {{ happy.spotify1 }}<br>
+                            <img src ="{{ happy.artwork }}" class="album-artwork"><br>
+                            <a href ="{{ happy.spotify }}" target="_blank">{{ happy.spotify }}</a><br>
                         {% endfor %}  
                     </div>
             <!-- </div> -->
