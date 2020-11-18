@@ -5,6 +5,8 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+import urllib.parse
+import gridfs
 if os.path.exists("env.py"):
     import env
 
@@ -35,8 +37,15 @@ def mood():
 @app.route("/")
 @app.route("/get_happy")
 def get_happy():
-    happy = mongo.db.albums.find({"mood": "happy"})
+    happy = mongo.db.albums.find({"mood": "Happy"})
     return render_template("happy.html", happy=happy)
+ 
+
+@app.route("/")
+@app.route("/get_image")
+def get_image():
+    image = mongo.db.albums.find({"artwork": "artwork"})
+    return render_template("albums.html", image=image)
 
 
 @app.route("/register", methods=["GET", "POST"])
