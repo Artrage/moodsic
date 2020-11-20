@@ -17,14 +17,14 @@
                 <div class="div col-2"></div>           
                     <div class="col-lg-8 text-center">
                         {% for happy in happy %}
-                            {{ happy.artist }}<br>
+                            <a href ="{{ happy.spotify }}" target="_blank"><img src ="{{ happy.artwork }}" class="album-artwork" {{ happy.spotify }}></a><br>
+                            <h4 class="happy">Artist: {{ happy.artist }}</h4><br>
                             {{ happy.title }}<br>
                             {{ happy.mood }}<br>
                             {{ happy.genre }}<br>
                             {{ happy.year }}<br>
                             {{ happy.is_fav }}<br>
-                            <img src ="{{ happy.artwork }}" class="album-artwork"><br>
-                            <a href ="{{ happy.spotify }}" target="_blank">{{ happy.spotify }}</a><br>
+                            <a href ="{{ happy.spotify }}" target="_blank">{{ happy.spotify }}</a><br><br>
                         {% endfor %}  
                     </div>
             <!-- </div> -->
@@ -34,5 +34,3 @@
 <!-- </div> -->
 
 {% endblock %}
-
-<iframe src="https://open.spotify.com/embed/album/6EVYTRG1drKdO8OnIQBeEj" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>

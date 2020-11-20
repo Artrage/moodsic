@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for album in albums %}
-        {{ album.artist }}<br>
-        {{ album.title }}<br>
-        {{ album.mood }}<br>
-        {{ album.genre }}<br>
-        {{ album.year }}<br>
-        {{ album.is_fav }}<br>
-        <img src ="{{ album.artwork }}" class="album-artwork"><br>
-        {{ album.spotify }}<br>
-    {% endfor %}    
+            <div class="row container-fluid">
+                <div class="div col-2"></div>           
+                    <div class="col-lg-8 text-center">
+
+
+                    {% for album in albums %}
+                        <a href ="{{ album.spotify }}" target="_blank" alt="{{ album.spotify }}"><img src ="{{ album.artwork }}" class="album-artwork"></a><br>
+                        <div class="album"> Artist: {{ album.artist }} </div><br>
+                        Album: {{ album.title }}<br>
+                        Mood: {{ album.mood }}<br>
+                        Genre: {{ album.genre }}<br>
+                        Year: {{ album.year }}<br>
+                        Favs: {{ album.is_fav }}<br>
+                        <a href ="{{ album.spotify }}" target="_blank">{{ album.spotify }}</a><br><br>
+                    {% endfor %}    
+
+
+                        </div>
+                    </div>
+                <div class="div col-2"></div>
+             </div>
 
 {% endblock %}

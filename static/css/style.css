@@ -1,5 +1,49 @@
+
 body {
     background-color: rgb(233, 233, 233);
+    margin-bottom: 50px;
+}
+
+img.album-artwork {
+    max-width: 200px;
+    height: auto;
+    text-align: center;
+    border: 15px;
+    background-color: rgb(134, 24, 24);
+    margin-bottom: 10px;
+}
+
+/* h3::first-line {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: red;
+} */
+
+/* title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: red;
+} */
+
+text.albumtitle {
+    font-size: 50px;
+    margin-bottom: 5px;
+    color: red;
+}
+
+.album {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(9, 151, 40);
+    padding: 0;
+}
+
+.happy {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: rgb(189, 49, 49);
+    padding: 0;
 }
 
 reg-form {
@@ -15,21 +59,45 @@ fas1 {
     padding: 35px 5px;
 }
 
-btn-pad {    
+.btn-pad {
     padding: 5px;
-    background-color: black;
-    font-size: 40px;
 }
 
-card-style {
-    margin-top: 10px;
-    background-color: red;
+.bottom-footer {
+    margin-top: auto;
 }
 
-album-artwork {
-    max-width: 300px;
-    height: auto;
-    text-align: center;
-    border: 15px;
-    opacity: 0.5;
+
+
+.nav-tabs {
+    display:none;
 }
+
+@media(min-width:768px) {
+    .nav-tabs {
+        display: flex;
+    }
+
+    .card {
+        border: none;
+    }
+
+    .card .card-header {
+        display:none;
+    }  
+
+    .card .collapse{
+        display:block;
+    }
+}
+
+@media(max-width:767px){
+    /* 
+     * Changed selector to `.tab-content > .tab-pane` in order to override `.fade:not(.show)`
+     * In BS4 Beta `.tab-pane`s were rendered hidden by just `.fade`
+     */
+    .tab-content > .tab-pane {
+        display: block;
+        opacity: 1;
+    }
+}s
