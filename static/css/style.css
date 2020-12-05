@@ -10,6 +10,7 @@ img.album-artwork {
     text-align: center;
     border: 15px;
     background-color: rgb(134, 24, 24);
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 
@@ -72,7 +73,7 @@ fas1 {
 .nav-tabs {
     display:none;
 }
-
+/* 
 @media(min-width:768px) {
     .nav-tabs {
         display: flex;
@@ -89,15 +90,23 @@ fas1 {
     .card .collapse{
         display:block;
     }
-}
+} */
 
-@media(max-width:767px){
+/* @media(max-width:767px){
     /* 
      * Changed selector to `.tab-content > .tab-pane` in order to override `.fade:not(.show)`
      * In BS4 Beta `.tab-pane`s were rendered hidden by just `.fade`
      */
-    .tab-content > .tab-pane {
+    /* .tab-content > .tab-pane {
         display: block;
         opacity: 1;
-    }
-}s
+    } */
+/* } */ 
+
+.accordion-test {
+    background-color: aquamarine;
+}
+
+.accordion-center {
+    text-align: center;
+}

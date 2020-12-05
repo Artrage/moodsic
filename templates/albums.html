@@ -15,7 +15,31 @@
                         Year: {{ album.year }}<br>
                         Favs: {{ album.is_fav }}<br>
                         <a href ="{{ album.spotify }}" target="_blank">{{ album.spotify }}</a><br><br>
+
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0 collapse">
+        <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          COMMENTS
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body text-center">
+        <p>You are in the mood for music but don't know which album to pick?<br>
+        This is where MOODSIC comes in handy.<br>
+        Pick your mood from the dropdown menu above and let us do the rest
+        </p>      
+        </div>
+    </div>
+  </div>
+
+
                     {% endfor %}    
+
+
 
 
                         </div>

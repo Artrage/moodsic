@@ -18,11 +18,11 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route("/get_albums")
-def get_albums():
-    albums = mongo.db.albums.find()
-    return render_template("albums.html", albums=albums)
+# @app.route("/")
+# @app.route("/get_albums")
+# def get_albums():
+#     albums = mongo.db.albums.find()
+#     return render_template("albums.html", albums=albums)
 
 
 @app.route("/")
@@ -112,6 +112,9 @@ def logout():
     flash("Logged out. Ciao!")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+
 
 
 # @app.route("/happy")

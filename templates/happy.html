@@ -15,17 +15,34 @@
 
             <div class="row">
                 <div class="div col-2"></div>           
-                    <div class="col-lg-8 text-center">
+                    <div class="col-lg-8 col-sm-8 text-center">
                         {% for happy in happy %}
-                            <a href ="{{ happy.spotify }}" target="_blank"><img src ="{{ happy.artwork }}" class="album-artwork" {{ happy.spotify }}></a><br>
+                            <a href ="{{ happy.spotify }}" target="_blank"><img src ="{{ happy.artwork }}" class="album-artwork" {{ happy.spotify }} alt="Get it on Spotify!"></a><br>
                             <h4 class="happy">Artist: {{ happy.artist }}</h4><br>
-                            {{ happy.title }}<br>
-                            {{ happy.mood }}<br>
-                            {{ happy.genre }}<br>
-                            {{ happy.year }}<br>
-                            {{ happy.is_fav }}<br>
-                            <a href ="{{ happy.spotify }}" target="_blank">{{ happy.spotify }}</a><br><br>
-                        {% endfor %}  
+                            Album: {{ happy.title }}<br>
+                            Mood: {{ happy.mood }}<br>
+                            Genre: {{ happy.genre }}<br>
+                            Year: {{ happy.year }}<br>
+                            Favs: {{ happy.is_fav }}<br>
+                            <a href ="{{ happy.spotify }}" target="_blank">{{ "Get it on Spotify!" }}</a><br><br>
+
+
+
+                        <!-- comments section -->
+                            <p>
+    						<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							    View review
+							  </button>
+							</p>
+							<div class="collapse" id="collapseExample" data-toggle="false">
+								<div class="card card-body">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+									keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+								</div>
+							</div>
+
+
+                         {% endfor %}  
                     </div>
             <!-- </div> -->
             </div>
