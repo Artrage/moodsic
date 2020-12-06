@@ -110,3 +110,13 @@ fas1 {
 .accordion-center {
     text-align: center;
 }
+
+.review-btn {
+    background-color: fff; 
+    outline: 2px;
+    font-size: 25px;
+}
+
+.button-padding {
+    padding: 2px;
+}

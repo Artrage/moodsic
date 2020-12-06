@@ -114,13 +114,31 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
 
+    if request.method == "POST":
+        album_id = mongo.db.albums.find_one(
+        {"_id": request.form.get["_id"]})["album_id"]
 
+        userid = mongo.db.users.find_one(
+        {"_id": request.form.get["_id"]})["userid"]
 
-# @app.route("/happy")
-# def happy():
-#     happy = mongo.db.albums.find()
-#     return render_template("happy.html", happy=happy)
+        review = {
+            "comment": request.form.get("comment"),
+            "username": session["user"],
+            "album_id": request.form.get("album_id"),
+            "userid": request.form.get("userid")
+        }
+        mongo.db.comments.insert_one(review)
+        flash("Your review has been added!")
+        return redirect(url_for("mood"))
+
+    if session["user"]:
+        return render_template("add_review.html", add_review=add_review)
+    else:
+        flash("You have to log in to leave a review")
+        return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
