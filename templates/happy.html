@@ -28,9 +28,9 @@
 
                         <div class="row text-center">  
                             <p>
-                            <button class="btn btn-sm btn-warning button-padding" type="button"><a href="{{ url_for('add_review') }}">
-                                Add a Review</a>
-                            </button>
+                            <a href="{{ url_for('add_review', album_id=happy.id) }}" class="btn btn-sm btn-warning button-padding" target="_blank">
+                                Add a Review
+                            </a>
                             </p>
                             <br>
 
@@ -39,11 +39,14 @@
     						<button class="btn btn-sm btn-primary button-padding" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 							    View review
 							  </button>
+                           
 							</p>
 							<div class="collapse" id="collapseExample" data-toggle="false">
 								<div class="card card-body">
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-									keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    {% for comment in happy.comments %}
+                                    Username: {{ comment.username }}<br><br>
+                                    Content: {{ comment.content }}<br><br>
+                                    {% endfor %}
 								</div>
 							</div>
                         </div>  

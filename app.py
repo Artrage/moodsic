@@ -35,9 +35,62 @@ def mood():
 @app.route("/")
 @app.route("/get_happy")
 def get_happy():
+    output = []
+
     happy = mongo.db.albums.find({"mood": "Happy"})
-    return render_template("happy.html", happy=happy)
- 
+    for h in happy:
+        oh = dict()
+        oh['spotify'] = h.get('spotify')
+        oh['artwork'] = h.get('artwork')
+        oh['artist'] = h.get('artist')
+        oh['title'] = h.get('title')
+        oh['mood'] = h.get('mood')
+        oh['genre'] = h.get('genre')
+        oh['year'] = h.get('year')
+        oh['is_fav'] = h.get('is_fav')
+        oh['id'] = h.get('_id')
+
+        oh['comments'] = []
+
+        # step 1: find all comments for album by album._id
+        comments = mongo.db.comments.find({"album_id": h.get('_id')})
+
+        print('Comments Count: ' + str(comments.count()))
+
+        # step 2: iterate over each comment
+        for c in comments:
+            comment_content = c['comment']
+            comment_username = c['username']
+            oh['comments'] += [
+                {
+                    'content': comment_content,
+                    'username': comment_username
+                }
+            ]
+
+        output += [oh]
+
+    return render_template("happy.html", happy=output)
+
+
+# @app.route("/")
+# @app.route("/get_happy")
+# def get_happy():
+#     happy = mongo.db.albums.find({"mood": "Happy"})
+
+#     view_review = mongo.db.comments.find({""})
+#     return render_template("happy.html", happy=happy)
+
+
+# @app.route("/")
+# @app.route("/view_review/<album_id>")
+# def view_review(album_id):
+
+#     view_review = mongo.db.comments.find_one(
+#         {"_id": ObjectId(album_id)}
+#     )
+    
+#     return (view_review=view_review)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -114,31 +167,35 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_review", methods=["GET", "POST"])
-def add_review():
+@app.route("/add_review/<album_id>", methods=["GET", "POST"])
+def add_review(album_id):
+
+    add_review = mongo.db.albums.find_one(
+    {"_id": ObjectId(album_id)})
 
     if request.method == "POST":
-        album_id = mongo.db.albums.find_one(
-        {"_id": request.form.get["_id"]})["album_id"]
-
-        userid = mongo.db.users.find_one(
-        {"_id": request.form.get["_id"]})["userid"]
+    
+        # user_id = mongo.db.users.find_one(
+        # {"_id": request.form.get["_id"]})["user_id"]
 
         review = {
             "comment": request.form.get("comment"),
             "username": session["user"],
-            "album_id": request.form.get("album_id"),
-            "userid": request.form.get("userid")
+            "album_id": ObjectId(album_id),
+            # "user_id": ObjectId(user_id)
         }
         mongo.db.comments.insert_one(review)
         flash("Your review has been added!")
-        return redirect(url_for("mood"))
+        return redirect(url_for("get_happy"))
 
     if session["user"]:
         return render_template("add_review.html", add_review=add_review)
     else:
         flash("You have to log in to leave a review")
         return redirect(url_for("login"))
+
+
+
 
 
 if __name__ == "__main__":
